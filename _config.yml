@@ -3,9 +3,9 @@ title: Sharan Jhangiani
 description: Sharan Jhangiani is a student at the University of Washington studying Data Science and Computational Finance at the University of Washington. He like thinking and talking about cities, innovative business models, and NLP research.
 nav-links:
   - name: About
-    url: /
+    url: {{url}}/
   - name: Some (Un)Organized Thoughts
-    url: /thoughts
+    url: {{url}}/thoughts
 defaults:
   -
     scope:
