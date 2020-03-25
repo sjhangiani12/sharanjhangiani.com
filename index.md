@@ -13,7 +13,7 @@ Previously, I worked for the [City of Aarhus](https://www.aakb.dk/bibliotek/itk)
 
 I also ran [DubHacks](http://dubhacks.co), one of the biggest hackathons in the US, the Algorithmic Trading Club, and helped teach [intro](https://myplan.uw.edu/course/#/courses/INFO370) and [advanced](https://myplan.uw.edu/course/#/courses/INFO371) machine learning. 
 
-This summer, I'll I'll be joining [Facebook](facebook.com) in Menlo Park as a Data Science Intern.
+This summer, I'll I'll be joining [Facebook](facebook.com) in Menlo Park as a Data Science Intern. 
 
 ### Currently...
 

@@ -1,11 +1,12 @@
-url: http://sharanjhangiani.com
+url: "https://sharanjhangiani.com"
+baseurl: ""
 title: Sharan Jhangiani
 description: Sharan Jhangiani is a student at the University of Washington studying Data Science and Computational Finance at the University of Washington. He like thinking and talking about cities, innovative business models, and NLP research.
 nav-links:
   - name: About
-    url: http://sharanjhangiani.com/
+    url: /
   - name: Some (Un)Organized Thoughts
-    url: http://sharanjhangiani.com/thoughts
+    url: /thoughts
 defaults:
   -
     scope:
@@ -19,6 +20,5 @@ defaults:
     values:
       is_post: true # automatically set is_post=true for all posts
 permalink: /:title
-baseurl: /sharanjhangiani.com
 sass:
   style: compressed
