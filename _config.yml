@@ -19,7 +19,6 @@ defaults:
     values:
       is_post: true # automatically set is_post=true for all posts
 permalink: /:title
-baseurl: Nothing_for_now
-site.url: sharanjhangiani.com
+baseurl: /sharanjhangiani.com
 sass:
   style: compressed
