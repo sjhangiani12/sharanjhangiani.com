@@ -1,15 +1,7 @@
-# Point Theme
+# [sharanjhangiani.com](https://sharanjhangiani.com)
 
-Point is a [Jekyll](https://jekyllrb.com/) theme for personal websites that are simple and to the point.
+![Screenshot of sharanjhangiani.com](assets/screenshot_of_site.png)
 
-It's based on [Katherine Huang's personal website](https://katmh.com), so head there for a preview.
+This is my personal website. It's a static blog built with Jekyll and hosted on Github.
 
-The theme is fully responsive, so it looks good and works on devices of all sizes. All pages are written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for ease of editing and writing.
-
-To use Point, fork this repo and make your own changes. Be sure to customize the `_config.yml` file, and you can also change colors and fonts in `styles/styles.scss`. Have fun!
-
-This theme uses the [MIT license](https://choosealicense.com/licenses/mit/).
-
-To report a bug or request a feature, please [create an issue](https://github.com/katavie/point-theme/issues).
-
-![preview](preview.png)
+If you would like to use it as the basis for your own website, feel free to fork this open source Jekyll theme I used: [Point Theme](https://github.com/katavie/point-theme). All credit goes to [Katherine Huang](http://katmh.com/) for the template and underlying inspiration to create this. 

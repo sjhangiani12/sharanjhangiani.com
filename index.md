@@ -1,34 +1,31 @@
 ---
 ---
 
-<img id="portrait" src="assets/me.jpg" alt="placeholder photo">
+<img id="portrait" src="/assets/me.png" alt="Headshot: Sharan Jhangiani">
 
-Hi! I’m Kat, from Lowell, MA. I’m a first-year student at MIT studying Urban Planning and Computer Science.
+Hi, I'm Sharan. 
 
-I founded [Science and Us](https://scienceandus.org), a nonprofit that runs events and creates online resources to help high schoolers learn how to make science clear and engaging.
+I'm a third year undergraduate in the [Information School](https://ischool.uw.edu/) studying Data Science and Computational Finance at the University of Washington. 
 
-I’m a founder of the [We Are America Project](https://weareamericaproject.com), working with 1300+ students in almost 25 states to share stories that spark conversations, led by the next generation, on what it means to be American.
+_I like thinking and talking about cities, innovative business models, and NLP research._
 
-Above all else, I value integrity, authenticity, empathy, and surrounding yourself with people who lift each other up.
+Previously, I worked for the [City of Aarhus](https://www.aakb.dk/bibliotek/itk), [Trueform](https://trueform.io) and [SAP Concur](https://concur.com). 
 
-## 👋🏻 Say hi
+I also ran [DubHacks](http://dubhacks.co), one of the biggest hackathons in the US, the Algorithmic Trading Club, and helped teach [intro](https://myplan.uw.edu/course/#/courses/INFO370) and [advanced](https://myplan.uw.edu/course/#/courses/INFO371) machine learning. 
 
-You can contact me via piegons, horseback, or snail mail.
+This summer, I'll I'll be joining [Facebook](facebook.com) in Menlo Park as a Data Science Intern.
 
-## 📍 What I’m doing now*
+### Currently...
 
-- Taking 7.012, 8.01, 11.401, and CMS.618 at MIT
-- Building Science and Us
-- Developing a website, helping teachers, and [speaking](https://hubweek.org) [at events](https://bostonbookfest.org/festival/presenters/) for the national We Are America project
-- Organizing [xFair](https://xfair.io), dancing on [Asian Dance Team](https://adt.it.eddu), and writing for [Chroma](https://mitchroma.ink) and Science Policy Review
+I'm currently working on [Hypothesis](http://hypothesis.fm), a podcast on reverse engineering product decisions.
 
-Last updated November 21, 2019
+I'm also working at [SiDx](https://sidx.com/), a rapid blood typing startup, building machine learning infrastructure and pipelines for a future capstone project.
 
-\* The concept of a “[now page](https://nownownow.com/about” is from Derek Sivers
+Finally, in my remaining time, I'm exploring NLP applications on Podcasting content with some friends and building a community for hopeful entrepreneurs at the University of Washington.
 
-## 📠 Fun facts
+_In between_, I like to listen to podcasts ([my favorites](/my-favorite-podcasts)), play soccer and FIFA (let me know if you want to lose to me 😉), and spend time with friends and family. 
 
-- I use em dashes liberally
-- My favorite foods are avocado and ravioli (ideally not together)
-- I can do single-leg/pistol squats but am *very* far from being able to do single-arm push ups
-- I use [Missive](https://missiveapp.com/) as my email client, Visual Studio Code as my primary text editor (but tumblr.com/customize will always have a special place in my heart), Google Calendar as my calendar, and scrap paper / vim + .txt files for todo lists
+### Say hi!
+
+I love meeting new people. Please, don't be afraid to say hi on [Twitter](https://twitter.com/sjhangiani12), [Facebook](https://www.facebook.com/sharan.jhangiani), [LinkedIn](https://www.linkedin.com/in/sharanjhangiani/), or via [email](mailto:sharan@uw.edu) to chat or if you want to collaborate on something!
+
