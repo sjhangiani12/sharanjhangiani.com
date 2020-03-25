@@ -2,14 +2,14 @@
 title: My Favorite Podcasts
 ---
 
-After getting asked multiple times what my favorite podcasts are, I decided to compile a running list. I _highly_ reccomend listening to these, and would love eto hear opinions on each.
+After getting asked multiple times what my favorite podcasts are, I decided to compile a running list. I _highly_ reccomend listening to these, and would love to hear opinions.
 
 _This list was last updated:_ 03/24/2020
 
 ### Technology:
 
 #### [Acquired](https://www.acquired.fm/)
-Hosted by Ben Gilbert and David Rosenthal, Acquired was my first podcast that I truly fell in love with. As per their site, "Acquired tells the stories behind great companies, diving deep into the events and strategies that brought them to where they are today.
+Hosted by Ben Gilbert and David Rosenthal, Acquired was the first podcast that I truly fell in love with. As per their site, "Acquired tells the stories behind great companies, diving deep into the events and strategies that brought them to where they are today.
 
 The show originally started covering "acquisitions that actually went well", examining the reasons behind the rare successful outcomes to understand how we can apply the learnings to our own organizations. As the show grew, we realized every great company -- whether it got acquired, went public, or is still private -- has incredible stories to be told."
 
