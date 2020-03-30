@@ -7,9 +7,9 @@ Hi, I'm Sharan.
 
 I'm a third year undergraduate in the [Information School](https://ischool.uw.edu/) studying Data Science and Computational Finance at the University of Washington. 
 
-_I like thinking and talking about cities, innovative business models, and building mini tools._
+_I like thinking and talking about cities, innovative business models, and general tech trends._
 
-Previously, I worked for the [City of Aarhus](https://www.aakb.dk/bibliotek/itk) in Denmark, [Trueform](https://trueform.io) and [SAP Concur](https://concur.com). 
+Previously, I worked for the [City of Aarhus](https://www.aakb.dk/bibliotek/itk) in Denmark, [Trueform](https://trueform.io) and [SAP Concur](https://concur.com) in roles around Software, Machine Learning, and Data. 
 
 I also ran [DubHacks](https://dubhacks.co), one of the biggest hackathons in the US, the Algorithmic Trading Club, and helped teach [intro](https://myplan.uw.edu/course/#/courses/INFO370) and [advanced](https://myplan.uw.edu/course/#/courses/INFO371) machine learning. 
 
