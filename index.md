@@ -27,5 +27,4 @@ _In between_, I like to listen to podcasts ([my favorites](/my-favorite-podcasts
 
 ### Say hi!
 
-I love meeting new people. Please, don't be afraid to say hi on [Twitter](https://twitter.com/sjhangiani12), [Facebook](https://www.facebook.com/sharan.jhangiani), [LinkedIn](https://www.linkedin.com/in/sharanjhangiani/), or via [email](mailto:sharan@uw.edu) to chat or if you want to collaborate on something! If you want to hire me, here is my [resume](/resume.pdf)! 
-
+I love meeting new people. Please, don't be afraid to say hi on [Twitter](https://twitter.com/sjhangiani12), [Facebook](https://www.facebook.com/sharan.jhangiani), [LinkedIn](https://www.linkedin.com/in/sharanjhangiani/), or via [email](mailto:sharan@uw.edu) to chat or if you want to collaborate on something!
