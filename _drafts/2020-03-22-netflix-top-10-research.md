@@ -24,13 +24,19 @@ You can watch as much as you want, whenever you want without a single commercial
 
 In short, as many know, Netflix is a multinational streaming platform, providing easy access to TV Shows, Movies, and documentaries, and are known for pretty much completely revolutionizing the way we consume content.
 
-#### History
+#### Product Overview
 
 _I'll switch to bullets here to allow for a more free flowing conversation._
 
+__History__
+
 - Netflix was founded in August of 1997 (pre-dot com boom era) by Reed Hastings and less commonly known Marc Randolph. 
-- They had met working at Pure Atria, a company started by Reed himself after the small company Marc was at was purchased by them. 
-- They got close because they both lived super far away and carpooled to work everyday, an hour long commute. 
-- During these commutes, they'd riff on random ideas ranging from "“What's the criteria for something that is going to be successful?” Or “What's a trend that we could leverage?”
-- They grew an affinnity for Amazon and spent time brainstorming how to leverage a similar model in a different space (Amazon was just books at this time).
-- Decided to experiment with the DVD genre after hearing about the incoming growth. 
+- Decided to experiment with the DVD genre in an Amazon inspired model after hearing about the incoming growth in the technology.
+- Before you know it Netflix was born.
+- Over time, they moved from DVDs to Streaming, partially because of an interesting economic situation: The more the individual used their product, the more they spent. In other words, those who used Netflix the most cost them the most.
+
+__Now__
+
+- Netflix has grown to become the major player in the entertainment industry that it is today. 
+- With operations in nearly every country around the world, Netflix has expanded from an exclusively U.S. based company to a truly global enterprise with over 8600 employees. 
+- Their product
