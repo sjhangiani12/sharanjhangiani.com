@@ -1,8 +1,8 @@
 ---
-title: Late Night Thoughts // People Pipelines.
+title: Late Night Thoughts // Building People Pipelines
 ---
 
-### An ode to the doers...
+### An Ode to Doers
 
 I want to preface this essay by quickly explaining the surrounding context in which this is being written. It is currently April 7th, 2020, 1:45AM (PST). The world is under seige by a global pandemic, the biggest and most terrifying phenomenon I have seen in my life (Although, at the _young_ age of 20, there isn't much of a sample size). I am quarintined at home, sitting in my room as I have been for the last almost month now, working on a mix of homework and side projects with the occasional deluge of self discovery. It is, to say the least, a _very_ interesting time. 
 
@@ -10,7 +10,7 @@ Yet, while there is much to be concerned about, the presiding emotion I have fel
 
 Doers like to just "do" things. They don't care the circumstance, the time it takes, the effort it requires - they just go for it. There's very little that stands in their way of working on something once they set their minds to it - whether thats monetary, social dissedence, or any alternative sort of pushback, it doesn't matter. And the best part is, they don't do it for the money or the fame or any of that - they do it because it's _fun_. We do it because it's fun. 
 
-### But where are the doers
+### Organizations and People Chasing
 
 The more I think about it, the more I realize -- it is people like these that make me feel like I have a purpose; they give me __energy__ that I seldom have found elsewhere. Maybe this is the naivety of a relatively sheltred 20yr old, but in my current perception, it's true. So, it's easy to come to the conclusion that it is people like these that I want to continue to find, yet finding the ones around me now took 3.5 years, and I don't have that much time to spend. Hence, the problem I face is simple: 
 
@@ -19,7 +19,7 @@ __How do I find the people who inspire me in a timely manner?__
 
 Well, there's two main approcahes I've tried to solve this - the generic organizational route and what I'll call the "people chasing" route. 
 
-#### Organizations and doers
+##### Organizations
 
 I'll get straight to the point -- the organizations I've been exposed to have _not_ done a good job in introducing me to the people I seek. My first week in college began with my joining a professional business frat, marketed to me as an organization filled with people who are doing big and entreprenuerial things, I thought I had hit the jackpot. Yet, while I was able to find some good friends in this organization, I wasn't able to find the people that truly inspired me. And as I mimicked this process across a series of different organizations, I consistently recieved similar results. Upon reflection, here's why I think this is the case: 
 
@@ -32,13 +32,13 @@ It's dissapointing to say the least that the vast majority of organizations on a
 
 That all being said, in the brief experience I've had in running various organizations, I have found inklings of success. Specifically, in organizations that are structured around the flexibilty to do what the members what to do, are the ones that are successful in aggregating _truly_ inspiring doers. Unfortunately, these often don't last or even exist on college campuses, which is something I'll return to at the end of this essay. 
 
-#### People Chasing
+##### People Chasing
 
 The second method that has resulted in _some_ success for me has been this idea of "people chasing." In a simplistic explanation, its just pure networking. Starting with one person and then asking him/her to introduce you to another similar person, who introduces you to another, and so forth. It's a long process, but once it's in action, it's quite fruitful. 
 
 I got lucky with my start - I met someone in the line for lunch who helped me kick start the "chase." After that I was slowly able to meet more and more people. Over time, I feel quite pleased with the group of friends I've built, but I don't want to stop. As mentioned earlier, people inspire me, and I want to keep growing that group that inspire me to get more diverse perspectives and continue growing. Thus, while this system has worked, how do I build something to do this for me. In other words, how do I build a __people pipeline__. 
 
-### Construction begins...
+### Starting Blueprints
 
 If you're looking for a proven and well defined answer, I'm sorry I don't have one. If you want an unproven crazy idea - well, I've got one of those. 
 
@@ -52,5 +52,4 @@ What that looks like? I don't quite know. Right now, I'm envisioning a space, se
 
 I don't really know how this will go, but as I learn, I'll continue to share here. If you have any thoughts on this topic or disagree with something I've said, I'd really love to hear from you. Best way to reach me is to DM me on twitter [@sjhangiani12](https://twitter.com/sjhangiani12) or [email me](mailto://sharan@uw.edu). 
 
-Thanks for reading,
-Sharan
+Thanks for reading - Sharan
