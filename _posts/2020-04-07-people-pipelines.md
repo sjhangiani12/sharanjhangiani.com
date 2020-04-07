@@ -19,7 +19,7 @@ __How do I find the people who inspire me in a timely manner?__
 
 Well, there are two main approaches I've tried to solve this - the generic organizational route and what I'll call the "people chasing" route. 
 
-##### Organizations
+#### Organizations
 
 I'll get straight to the point -- the organizations I've been exposed to have _not_ done a good job in introducing me to the people I seek. My first week in college began with my joining a professional business frat, marketed to me as an organization filled with people who are doing big and entrepreneurial things, I thought I had hit the jackpot. Yet, while I was able to find some good friends in this organization, I wasn't able to find the people that truly inspired me. And as I mimicked this process across a series of different organizations, I consistently received similar results. Upon reflection, here's why I think this is the case: 
 
@@ -32,7 +32,7 @@ It's disappointing, to say the least, that the vast majority of organizations on
 
 That all being said, in the brief experience I've had in running various organizations, I have found inklings of success. Specifically, in organizations that are structured around the flexibility to do what the members want to do, are the ones that are successful in aggregating _truly_ inspiring doers. Unfortunately, these often don't last or even exist on college campuses, which is something I'll return to at the end of this essay. 
 
-##### People Chasing
+#### People Chasing
 
 The second method that has resulted in _some_ success for me has been this idea of "people chasing." In a simplistic explanation, it's just pure networking. Starting with one person and then asking him/her to introduce you to another similar person, who introduces you to another, and so forth. It's a long process, but once it's in action, it's quite fruitful. 
 
@@ -46,10 +46,10 @@ I mentioned earlier when talking about organizations that there have been inklin
 
 At the start of this school year, I was given the opportunity to help run the Algorithmic Trading Club. It was a really small club (when I say small I mean like ~5 people every meeting, if even that), so I didn't expect much and thought it'd be a fun way to explore the world of quant finance (side note: I don't really like this world that much haha). Anyways, I was to run it with a good friend of mine, who I'd classify as one of the few doers I've met at UW, and we both decided that because we have this opportunity, we'd try to grow the club. In the first couple of weeks we started off very well: we had things planned out to a T, workshops, speakers, sessions, etc. But a couple weeks into the quarter, everything fizzled out. Demoralized and somewhat disinterested, the next quarter we took a more "hands-off" approach. We reserved the room for the club to meet in and booked a speaker or two, but that was pretty much it. The club moved at the pace and in the direction that the members wanted. _And it went great._ 
 
-Why? Well, we realized that if we want to cultivate a group of people who don't do well with structure and boundaries, establishing an organization with structure and boundaries is just going to push them away. So, we'll take this realization do the opposite -- build an organization without structure. 
+Why? Well, we realized that if we want to cultivate a group of people who don't do well with structure and boundaries, establishing an organization with structure and boundaries is just going to push them away. So, we'll do the opposite -- build an organization without structure. 
 
-What that look like? I don't quite know. Right now, I'm envisioning a space, separate from all the bureaucracy of the university, for makers to just hang out and build together. No rules, no requirements -- full freedom to do whatever you want. Ideally, those who stay and build there are the true doers, and the people that we're looking for. Thus, creating the people pipeline.
+What that look like? I don't quite know. Right now, I'm envisioning a space, separate from all the bureaucracy of the university, for makers to just hang out and build together. No rules, no requirements -- full freedom to do whatever you want. Ideally, those who stay and build there are true doers, and the people that we're looking for. Thus, creating the people pipeline.
 
 I don't really know how this will go, but as I learn, I'll continue to share here. If you have any thoughts on this topic or disagree with something I've said, I'd really love to hear from you. The best way to reach me is to DM me on twitter [@sjhangiani12](https://twitter.com/sjhangiani12) or [email me](mailto://sharan@uw.edu). 
 
-Thanks for reading - Sharan
+Thanks for reading :) - Sharan
