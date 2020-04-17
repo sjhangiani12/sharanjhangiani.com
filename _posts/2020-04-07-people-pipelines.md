@@ -2,22 +2,24 @@
 title: Late Night Thoughts // Building People Pipelines
 ---
 
+_Note: I was recently made aware of an argument that invalidated a lot of what I'm claiming below. Treat what follows as a rough draft with initial thoughts for now... I will update this statement when updated._
+
 ### An Ode to Doers
 
-I want to preface this essay by quickly explaining the surrounding context in which this is being written. It is currently April 7th, 2020, 1:45AM (PST). The world is under siege by a global pandemic, the biggest and most terrifying phenomenon I have seen in my life (Although, at the _young_ age of 20, there isn't much of a sample size). I am quarantined at home, sitting in my room as I have been for the last almost month now, working on a mix of homework and side projects with the occasional deluge of self-discovery. It is, to say the least, a _very_ interesting time. 
+I want to preface this essay by quickly explaining the surrounding context in which this is being written. It is currently April 7th, 2020, 1:45AM (PST). The world is under siege by a global pandemic, the biggest and most terrifying phenomenon I have seen in my life (although, at the _young_ age of 20, there isn't much of a sample size). I am quarantined at home, sitting in my room as I have been for almost the last month now, working on a mix of homework and side projects with the occasional deluge of self-discovery. It is, to say the least, a _very_ interesting time. 
 
-Yet, while there is much to be concerned about, the presiding emotion I have felt these last few weeks has been excitement. To my sister, who I will say is quite is annoyed by my lack of effort to spend time with her, I'm crazy. But to a few of my friends, my feeling is warranted and in fact, mimics their sentiment as well. See, we are, for lack of a better word, _doers_. We like to _build_, and _create_, and just have fun building things for the sake of building things. 
+Yet, while there is much to be concerned about given the situation, the presiding emotion I have felt these last few weeks has been excitement. To my sister, who I will say is quite is annoyed by my lack of effort to spend time with her, I'm crazy. But to a few of my friends, my feeling is warranted and in fact, mimics their sentiment as well. See, we are, for lack of a better word, _doers_. We take advantage of every situation, and work on projects - _ideating, planning and building all for the joy of building things._
 
-Doers like to just "do" things. They don't care about the circumstance, the time it takes, the effort it requires - they just go for it. There's very little that stands in their way of working on something once they set their minds to it - whether that's monetary, social dissidence, or any alternative sort of pushback, it doesn't matter. And the best part is, they don't do it for the money or the fame or any of that - they do it because it's _fun_. We do it because it's fun. 
+See, doers don't care about the circumstance, the time something may take, or the effort required - they just go for it and "do". There's very little that stands in their way of working on something once they set their minds to it - whether that's monetary, social dissidence, or any alternative sort of pushback, it doesn't matter. And the best part is, they don't do it for the money or the fame or any external incentive - they do it because it's _fun_.
 
 ### Organizations and People Chasing
 
-The more I think about it, the more I realize -- it is people like these that make me feel like I have a purpose; they give me __energy__ that I seldom have found elsewhere. Maybe this is the naivety of a relatively sheltered 20yr old, but in my current perception, it's true. So, it's easy to come to the conclusion that it is people like these that I want to continue to find, yet finding the ones around me now took 3.5 years, and I don't have that much time to spend. Hence, the problem I face is simple: 
+The more I think about it, the more I realize -- it is people like these that make me feel like I have a purpose; they give me __energy__ that I've struggled to find elsewhere. Maybe the idea that the people around me is what drives me comes from the naivety of a relatively sheltered 20yr old, but from my current viewpoint, it's true. So, it's easy to come to the conclusion that it is people like these that I want to continue to find, yet finding the ones around me now took 3.5 years, and I don't have that much time to wait around. Hence, the problem I face is simple: 
 
-__How do I find the people who inspire me in a timely manner?__
+__How do I find more people who inspire me in a timely manner?__
 
 
-Well, there are two main approaches I've tried to solve this - the generic organizational route and what I'll call the "people chasing" route. 
+Well, there are two main approaches I've tried to solve this - the standard organizational route and what I'll call the "people chasing" route. They've both had varying levels returns for the effort I put in, resulting in a 
 
 #### Organizations
 
