@@ -17,11 +17,9 @@ This summer, I'll be joining [Facebook](https://facebook.com) in Menlo Park as a
 
 ### Currently...
 
-Currently, [Arjun Lalwani](https://www.linkedin.com/in/arjun-lalwani) and I are working on [Hypothesis](http://hypothesis.fm), a podcast on reverse engineering product decisions.
+Currently, I'm working at [SiDx](https://sidx.com/), a rapid blood typing startup, building machine learning infrastructure and pipelines for a future capstone project.
 
-I'm also working at [SiDx](https://sidx.com/), a rapid blood typing startup, building machine learning infrastructure and pipelines for a future capstone project.
-
-Finally, in my remaining time, my friends and I are building projects to support people effected by Covid-19 at [Care37](https://care37.org) and creating a community for student entrepreneurs at the University of Washington.
+I'm also building tools for AI research and creating a community for student entrepreneurs at the University of Washington.
 
 _In between_, I like to listen to podcasts ([my favorites](/my-favorite-podcasts)), play soccer and FIFA (let me know if you want to lose to me 😉), and spend time with friends and family. 
 
