@@ -30,13 +30,9 @@ If you want to learn about what the future of our cities will look like and thin
 ### Life:
 
 #### [Not Overthinking](https://www.notoverthinking.com/)
-Hosted by Ali and Tiamur Abdaal, Not Overthinking is one of my favorite podcasts to just listen to without the intention of getting anything specific out of it, but for the pure purpose of casual entertainment. Often filled with relatable content and an enjoyable, personable, yet at times informative conversation, this is one of my favorite podcasts on life. 
+Hosted by Ali and Tiamur Abdaal, Not Overthinking is one of my favorite podcasts to just listen to without the intention of getting anything specific out of it, but for the pure purpose of casual entertainment. Often filled with relatable content and an enjoyable, personable, yet at times informative conversation, this is one of my favorite podcasts for passive consumption. 
 
 As defined by their website, "Not Overthinking is a podcast about happiness, creativity, and the human condition." They talk about "things like social interaction, lifestyle design, mental models... Things that are hard to examine, but important to explore. And hopefully, things that make for a fun and interesting chat every week." I highly reccomend this one. 
-
-
-
-If you want to learn about what the future of our cities will look like and think about how we might live, definetly give it a listen.
 
 
 ### Honorable Mentions:
