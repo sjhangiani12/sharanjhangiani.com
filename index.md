@@ -16,7 +16,7 @@ I also helped run [DubHacks](https://dubhacks.co), one of the biggest hackathons
 This summer, I'll be joining [Facebook](https://facebook.com) in Menlo Park as a Data Science Intern. 
 
 ### Currently...
-
+    
 Currently, I'm working at [SiDx](https://sidx.com/), a rapid blood typing startup, building machine learning infrastructure and pipelines for a future capstone project.
 
 I'm also building tools for AI research and creating a community for student entrepreneurs at the University of Washington.
