@@ -1,7 +1,7 @@
 ---
 ---
 
-<img id="portrait" src="/assets/me.png" alt="Headshot: Sharan Jhangiani">
+<img id="portrait" src="/assets/me.jpg" alt="Headshot: Sharan Jhangiani">
 
 Hi, I'm Sharan. 
 
