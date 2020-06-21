@@ -7,21 +7,21 @@ Hi, I'm Sharan.
 
 I'm a third year undergraduate in the [Information School](https://ischool.uw.edu/) studying Data Science and Computational Finance at the University of Washington. 
 
-_I like thinking and talking about cities, innovative business models, and general tech trends._
+_I like thinking and talking about cities, startups, and general tech and economic trends._
 
-Previously, I worked for the [City of Aarhus](https://www.aakb.dk/bibliotek/itk) in Denmark, [Trueform](https://trueform.io) and [SAP Concur](https://concur.com) in roles around Software, Machine Learning, and Data. 
+Previously, I worked for [Trueform](https://trueform.io), [SAP Concur](https://concur.com), and for the [City of Aarhus](https://www.aakb.dk/bibliotek/itk) in Denmark in roles around Software, Machine Learning, and Data. 
 
-I also helped run [DubHacks](https://dubhacks.co), one of the biggest hackathons in the US, the Algorithmic Trading Club, and helped teach [intro](https://myplan.uw.edu/course/#/courses/INFO370) and [advanced](https://myplan.uw.edu/course/#/courses/INFO371) machine learning. 
+I also helped run [DubHacks](https://dubhacks.co), one of the biggest hackathons in the US, the Algorithmic Trading Club, and helped teach a couple of intro machine learning courses. ([INFO 370](https://myplan.uw.edu/course/#/courses/INFO370) and [INFO 371](https://myplan.uw.edu/course/#/courses/INFO371))
 
-This summer, I'll be joining [Facebook](https://facebook.com) in Menlo Park as a Data Science Intern. 
+This summer, I'll be joining [ 
 
 ### Currently...
     
-Currently, I'm working at [SiDx](https://sidx.com/), a rapid blood typing startup, building machine learning infrastructure and pipelines for a future capstone project.
+Currently, I'm working at [Facebook Marketplace](https://www.facebook.com/marketplace/) as a Data Science Intern. 
 
-I'm also building tools for AI research and creating a community for student entrepreneurs at the University of Washington.
+I'm also building tools for [AI research](mlresearch.tools), reading and talking about books on my podcat, [Nimble Ideas](nimbleideas.show), and creating a community for student entrepreneurs at the University of Washington.
 
-_In between_, I like to listen to podcasts ([my favorites](/my-favorite-podcasts)), play soccer and FIFA (let me know if you want to lose to me 😉), and spend time with friends and family. 
+_In between_, I like to listen to podcasts ([my favorites](/my-favorite-podcasts)), follow and play soccer and FIFA, and spend time with friends and family. 
 
 ### Say hi!
 
