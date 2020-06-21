@@ -13,8 +13,6 @@ Previously, I worked for [Trueform](https://trueform.io), [SAP Concur](https://c
 
 I also helped run [DubHacks](https://dubhacks.co), one of the biggest hackathons in the US, the Algorithmic Trading Club, and helped teach a couple of intro machine learning courses. ([INFO 370](https://myplan.uw.edu/course/#/courses/INFO370) and [INFO 371](https://myplan.uw.edu/course/#/courses/INFO371))
 
-This summer, I'll be joining [ 
-
 ### Currently...
     
 Currently, I'm working at [Facebook Marketplace](https://www.facebook.com/marketplace/) as a Data Science Intern. 
