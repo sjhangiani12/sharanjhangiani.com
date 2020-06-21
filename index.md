@@ -17,7 +17,7 @@ I also helped run [DubHacks](https://dubhacks.co), one of the biggest hackathons
     
 Currently, I'm working at [Facebook Marketplace](https://www.facebook.com/marketplace/) as a Data Science Intern. 
 
-I'm also building tools for [AI research](mlresearch.tools), reading and talking about books on my podcat, [Nimble Ideas](nimbleideas.show), and creating a community for student entrepreneurs at the University of Washington.
+I'm also building tools for [AI research](https://mlresearch.tools), reading and talking about books on my podcat, [Nimble Ideas](https://nimbleideas.show), and creating a community for student entrepreneurs at the University of Washington.
 
 _In between_, I like to listen to podcasts ([my favorites](/my-favorite-podcasts)), follow and play soccer and FIFA, and spend time with friends and family. 
 
