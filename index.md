@@ -5,21 +5,17 @@
 
 Hi, I'm Sharan. 
 
-I'm a third year undergraduate in the [Information School](https://ischool.uw.edu/) studying Data Science and Computational Finance at the University of Washington. 
+I'm a final year undergraduate in the [Information School](https://ischool.uw.edu/) studying Data Science and Computational Finance at the University of Washington. 
 
-_I like thinking and talking about cities, startups, and general tech and economic trends._
+_I like thinking and talking about startups, cities, fantasy football, and soccer._
 
-Previously, I worked for [Trueform](https://trueform.io), [SAP Concur](https://concur.com), and for the [City of Aarhus](https://www.aakb.dk/bibliotek/itk) in Denmark in roles around Software, Machine Learning, and Data. 
+Previously, I worked for [Trueform](https://trueform.io), [SiDx](https://www.sidx.com), [SAP Concur](https://concur.com), and for the [City of Aarhus](https://www.aakb.dk/bibliotek/itk) in Denmark in roles around Software, Machine Learning, and Data. 
 
-I also helped run [DubHacks](https://dubhacks.co), one of the biggest hackathons in the US, the Algorithmic Trading Club, and helped teach a couple of intro machine learning courses. ([INFO 370](https://myplan.uw.edu/course/#/courses/INFO370) and [INFO 371](https://myplan.uw.edu/course/#/courses/INFO371))
+I also helped run [DubHacks](https://dubhacks.co), the Algorithmic Trading Club at UW, and helped teach a couple of courses. ([INFO 370](https://myplan.uw.edu/course/#/courses/INFO370) and [INFO 371](https://myplan.uw.edu/course/#/courses/INFO371))
 
 ### Currently...
     
-Currently, I'm working at [Facebook Marketplace](https://www.facebook.com/marketplace/) as a Data Science Intern. 
-
-I'm also building tools for [AI research](https://mlresearch.tools), reading and talking about books on my podcat, [Nimble Ideas](https://nimbleideas.show), and creating a community for student entrepreneurs at the University of Washington.
-
-_In between_, I like to listen to podcasts ([my favorites](/my-favorite-podcasts)), follow and play soccer and FIFA, and spend time with friends and family. 
+Currently, I'm working at [Facebook Marketplace](https://www.facebook.com/marketplace/) as a Data Science Intern and reading and talking about books on my podcast, [Nimble Ideas](https://nimbleideas.show).
 
 ### Say hi!
 
