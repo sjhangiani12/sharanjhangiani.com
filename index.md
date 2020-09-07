@@ -19,4 +19,4 @@ Currently, I'm working at [Facebook Marketplace](https://www.facebook.com/market
 
 ### Say hi!
 
-I love meeting new people. Please, don't be afraid to say hi on [Twitter](https://twitter.com/sjhangiani12), [Facebook](https://www.facebook.com/sharan.jhangiani), [LinkedIn](https://www.linkedin.com/in/sharanjhangiani/), or via [email](mailto:sharan@uw.edu) to chat or if you want to collaborate on something!
+I love meeting new people. Please, don't be afraid to say hi on [Twitter](https://twitter.com/sjhangiani12), [Facebook](https://www.facebook.com/sharan.jhangiani), [LinkedIn](https://www.linkedin.com/in/sharanjhangiani/), or via [email](mailto:sharan@uw.edu)!
