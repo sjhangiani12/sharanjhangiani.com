@@ -8,6 +8,8 @@ Hi, I'm Sharan.
 
 This is old... will update soon if I feel like it...
 
+jk^ I don't really want to but i throw some ideas in [thoughts](https://sharanjhangiani.com/thoughts) sometimes. so go check that out if you want.
+
 
 <!-- I'm a final year undergraduate in the [Information School](https://ischool.uw.edu/) studying Data Science and Computational Finance at the University of Washington.
 
