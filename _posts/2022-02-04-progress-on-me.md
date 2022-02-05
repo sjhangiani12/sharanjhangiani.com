@@ -1,6 +1,6 @@
---
+---
 title: a newfound discovery about me
---
+---
 
 objectively, today wasn't great. I spent most of the day trying to accomplish one thing that I knew i could easily do, but just was struggling to find the motivation or any sort of energy to do it. which of course, frustrated me even more.
 
