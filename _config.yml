@@ -2,11 +2,11 @@ url: https://sharanjhangiani.com
 baseurl: /
 title: Sharan Jhangiani
 description: Sharan Jhangiani is a student at the University of Washington studying Data Science and Computational Finance at the University of Washington. He like thinking and talking about cities, innovative business models, and NLP research.
-nav-links:
-  - name: About
-    url: /
-  - name: Thoughts
-    url: /thoughts
+# nav-links:
+#   - name: About
+#     url: /
+#   - name: Thoughts
+#     url: /thoughts
 defaults:
   -
     scope:
