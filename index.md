@@ -5,13 +5,15 @@
 
 Hey, I'm Sharan. 
 
-I'm currently working on a variety of projects, including: Building an app for resellers to manage their inventory, an open source tool to quickly configure payment on APIs, and a few more I can't share quite yet. 
+I'm always working on a bunch of projects. Currently I'm working on: Building an app for sneaker resellers to manage their inventory, an open source tool to quickly configure payment on APIs, and a few more I can't share quite yet. 
 
-Previously, I was a Machine Learning Engineer at Productiv, where I worked on anything and everything Machine Learning, including but not limited to: training models, data analysis, building our deployment infrastructure, and even building features end-to-end, from ML to front end changes. 
+Previously, I was a Machine Learning Engineer at Productiv, where I worked on anything and everything Machine Learning, including but not limited to: training models, building our deployment infrastructure/ML Platform, and even building features end-to-end, from training models, to backend changes, to even front end changes. 
 
-Before that I was a student at the University of Washington where I did a bunch of things, my favorite of which was starting DubHacks Next -- the first incubator for students at UW! You can see all the other things I've done and more details about Next on my [LinkedIn](https://linkedin.com/in/sharanjhangiani).
+Before that I was a student at the University of Washington where I did a bunch of things, my favorite of which was starting DubHacks Next -- the first incubator for students at UW! You can see all the other things I've done and more details about Next on my [LinkedIn](https://linkedin.com/in/sharanjhangiani). You can also check out my [Github](https://github.com/sjhangiani12) if you'd like, (it's a tad spares, I had switched to a work GH and lost a lot of stuff there after leaving) or find me on [Twitter](https://twitter.com/sjhangiani12)!
 
-Reach me at jhangiani.sharan(at)gmail.com!
+For anything and everything can reach me at jhangiani.sharan(at)gmail.com or DM me on Twitter!
+
+Much love :) 
 
 
 <!-- I'm a final year undergraduate in the [Information School](https://ischool.uw.edu/) studying Data Science and Computational Finance at the University of Washington.
