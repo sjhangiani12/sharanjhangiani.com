@@ -3,12 +3,15 @@
 
 <img id="portrait" src="/assets/me.jpg" alt="Headshot: Sharan Jhangiani">
 
-Hi, I'm Sharan.
+Hey, I'm Sharan. 
 
+I'm currently working on a variety of projects, including: Building an app for resellers to manage their inventory, an open source tool to quickly configure payment on APIs, and a few more I can't share quite yet. 
 
-This is old... will update soon if I feel like it...
+Previously, I was a Machine Learning Engineer at Productiv, where I worked on anything and everything Machine Learning, including but not limited to: training models, data analysis, building our deployment infrastructure, and even building features end-to-end, from ML to front end changes. 
 
-jk^ I don't really want to but i throw some ideas in [thoughts](https://sharanjhangiani.com/thoughts) sometimes. so go check that out if you want.
+Before that I was a student at the University of Washington where I did a bunch of things, my favorite of which was starting DubHacks Next -- the first incubator for students at UW! You can see all the other things I've done and more details about Next on my [LinkedIn](https://linkedin.com/in/sharanjhangiani).
+
+Reach me at jhangiani.sharan(at)gmail.com!
 
 
 <!-- I'm a final year undergraduate in the [Information School](https://ischool.uw.edu/) studying Data Science and Computational Finance at the University of Washington.
