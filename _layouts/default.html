@@ -1,6 +1,0 @@
-{% include head.html %}
-{% if page.is_post %}<a href="{{ '/thoughts' | prepend:site.url }}">← Back to all posts</a>{% endif %}
-<h1>{% if page.title %}{{ page.title }}{% endif %}{% if post.title %}{{ post.title }}{% endif %}</h1>
-{% if page.date %}<p><i>{{ page.date | date: '%B %d, %Y' }}</i></p>{% endif %}
-{{ content }}
-{% include foot.html %}

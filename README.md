@@ -1,7 +1,17 @@
-# [sharanjhangiani.com](https://sharanjhangiani.com)
+# sharanjhangiani.com
 
-![Screenshot of sharanjhangiani.com](assets/screenshot_of_page.png)
+Minimal static site. Single file: `index.html`.
 
-This is my personal website. It's a static blog built with Jekyll and hosted on Github.
+## Development
 
-If you would like to use it as the basis for your own website, feel free to fork this open source Jekyll theme I used: [Point Theme](https://github.com/katavie/point-theme). All credit goes to [Katherine Huang](http://katmh.com/) for the template, I only edited it slightly for my own usage. 
+- Open `index.html` in a browser to preview.
+- Edit the file to update links or copy.
+
+## Deployment
+
+- Hosted via GitHub Pages with a custom domain.
+- Keep the `CNAME` file to retain the domain mapping.
+
+## Notes
+
+- Previous Jekyll-based blog has been removed in favor of a simple, fast landing page inspired by danielgross.com.
