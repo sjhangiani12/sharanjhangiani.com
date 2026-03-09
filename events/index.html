@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>events - sharan jhangiani</title>
+    <meta name="description" content="Big Events Calendar" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --fg: #111; --bg: #fff; --muted: #999; --border: #e5e5e5;
+        --cell-min: 80px;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body {
+        background: var(--bg); color: var(--fg);
+        font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 13px; line-height: 1.4;
+        -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+      }
+
+      /* --- password gate --- */
+      #gate {
+        max-width: 400px; margin: 200px auto; padding: 0 20px; text-align: center;
+        text-transform: lowercase;
+      }
+      #gate h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; }
+      #gate p { color: var(--muted); margin: 0 0 28px; font-size: 14px; }
+      #gate input {
+        width: 100%; padding: 12px 16px;
+        font-family: inherit; font-size: 16px; border: 2px solid var(--border);
+        border-radius: 8px; outline: none; text-align: center; text-transform: lowercase;
+      }
+      #gate input:focus { border-color: var(--fg); }
+      #gate .error { color: #e11d48; font-size: 13px; margin-top: 10px; display: none; }
+
+      /* --- app shell --- */
+      #app { display: none; }
+
+      /* top bar */
+      .topbar {
+        position: sticky; top: 0; z-index: 100;
+        background: var(--bg); border-bottom: 1px solid var(--border);
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 12px 24px; gap: 16px;
+      }
+      .topbar .left { display: flex; align-items: center; gap: 8px; }
+      .topbar .left a {
+        color: var(--muted); text-decoration: none; font-size: 13px; margin-right: 12px;
+      }
+      .topbar .left a:hover { color: var(--fg); }
+      .year-nav { display: flex; align-items: center; gap: 0; }
+      .year-nav button {
+        background: none; border: none; font-family: inherit; font-size: 18px;
+        cursor: pointer; padding: 4px 10px; color: var(--muted); line-height: 1;
+      }
+      .year-nav button:hover { color: var(--fg); }
+      .year-nav .year { font-size: 20px; font-weight: 600; min-width: 60px; text-align: center; }
+      .topbar .right { display: flex; align-items: center; gap: 10px; }
+      .btn {
+        font-family: inherit; font-size: 13px; padding: 7px 16px;
+        border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
+        background: var(--bg); color: var(--fg); text-transform: lowercase;
+      }
+      .btn:hover { border-color: var(--fg); }
+      .btn-primary {
+        background: var(--fg); color: var(--bg); border-color: var(--fg);
+      }
+      .btn-primary:hover { background: #333; border-color: #333; }
+
+      /* --- year grid --- */
+      .year-grid-wrap {
+        padding: 0; overflow-x: auto;
+      }
+      .year-grid {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(var(--cell-min), 1fr));
+        gap: 1px;
+        background: var(--border);
+        position: relative;
+      }
+      .cell {
+        background: var(--bg);
+        min-height: 56px;
+        padding: 4px 6px;
+        position: relative;
+        overflow: hidden;
+      }
+      .cell.weekend { background: #fafafa; }
+      .cell.today { outline: 2px solid #f97316; outline-offset: -2px; z-index: 2; }
+      .cell.month-start { border-left: 3px solid var(--fg); }
+      .cell .label {
+        font-size: 11px; font-weight: 500; color: var(--muted);
+        text-transform: uppercase; line-height: 1.2;
+      }
+      .cell .label .month-name {
+        font-weight: 700; color: var(--fg); margin-right: 2px;
+      }
+      .cell .label .day-name {
+        font-weight: 400;
+      }
+
+      /* event bars - positioned absolutely over the grid */
+      .event-layer {
+        position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        pointer-events: none; z-index: 10;
+      }
+      .ev-bar {
+        position: absolute;
+        height: 16px;
+        border-radius: 3px;
+        padding: 0 5px;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        pointer-events: auto;
+        cursor: pointer;
+        z-index: 10;
+      }
+      .ev-bar:hover { filter: brightness(0.9); }
+
+      /* event colors */
+      .c-green { background: #22c55e; color: #fff; }
+      .c-orange { background: #f97316; color: #fff; }
+      .c-purple { background: #a855f7; color: #fff; }
+      .c-blue { background: #3b82f6; color: #fff; }
+      .c-pink { background: #ec4899; color: #fff; }
+      .c-yellow { background: #eab308; color: #fff; }
+      .c-red { background: #ef4444; color: #fff; }
+      .c-teal { background: #14b8a6; color: #fff; }
+      .c-gray { background: #6b7280; color: #fff; }
+
+      /* --- modal --- */
+      .modal-overlay {
+        display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3);
+        z-index: 200; justify-content: center; align-items: center;
+      }
+      .modal-overlay.open { display: flex; }
+      .modal {
+        background: var(--bg); border-radius: 12px; padding: 28px;
+        width: 420px; max-width: 90vw; box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      }
+      .modal h2 {
+        font-size: 18px; font-weight: 600; margin: 0 0 20px; text-transform: lowercase;
+      }
+      .modal label {
+        display: block; font-size: 12px; font-weight: 600; color: var(--muted);
+        margin-bottom: 4px; text-transform: uppercase;
+      }
+      .modal input, .modal select {
+        width: 100%; padding: 10px 12px; font-family: inherit; font-size: 14px;
+        border: 2px solid var(--border); border-radius: 6px; outline: none;
+        margin-bottom: 14px; text-transform: lowercase;
+      }
+      .modal input:focus, .modal select:focus { border-color: var(--fg); }
+      .modal .row { display: flex; gap: 12px; }
+      .modal .row > div { flex: 1; }
+      .modal .actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 6px; }
+      .modal .actions .btn-del {
+        margin-right: auto; background: none; border: none; color: #e11d48;
+        font-family: inherit; font-size: 13px; cursor: pointer; padding: 7px 0;
+      }
+      .modal .actions .btn-del:hover { text-decoration: underline; }
+      .colors-row {
+        display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap;
+      }
+      .colors-row .swatch {
+        width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+        border: 3px solid transparent; transition: border-color 0.1s;
+      }
+      .colors-row .swatch.active { border-color: var(--fg); }
+    </style>
+  </head>
+  <body>
+
+    <!-- password gate -->
+    <div id="gate">
+      <h1>big events calendar</h1>
+      <p>enter password to continue</p>
+      <input type="password" id="pwd" placeholder="password" autofocus />
+      <div class="error" id="err">wrong password, try again</div>
+    </div>
+
+    <!-- calendar app -->
+    <div id="app">
+      <div class="topbar">
+        <div class="left">
+          <a href="/">← home</a>
+          <div class="year-nav">
+            <button onclick="changeYear(-1)">‹</button>
+            <div class="year" id="year-label"></div>
+            <button onclick="changeYear(1)">›</button>
+          </div>
+        </div>
+        <div class="right">
+          <button class="btn" onclick="goToday()">today</button>
+          <button class="btn btn-primary" onclick="openModal()">+ create event</button>
+        </div>
+      </div>
+
+      <div class="year-grid-wrap">
+        <div class="year-grid" id="grid"></div>
+      </div>
+    </div>
+
+    <!-- create/edit event modal -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+      <div class="modal" onclick="event.stopPropagation()">
+        <h2 id="modal-title">create event</h2>
+        <label>event name</label>
+        <input type="text" id="ev-title" placeholder="e.g. vacation, birthday..." />
+        <div class="row">
+          <div>
+            <label>start date</label>
+            <input type="date" id="ev-start" />
+          </div>
+          <div>
+            <label>end date</label>
+            <input type="date" id="ev-end" />
+          </div>
+        </div>
+        <label>color</label>
+        <div class="colors-row" id="color-picker"></div>
+        <div class="actions">
+          <button class="btn-del" id="del-btn" style="display:none" onclick="deleteEvent()">delete event</button>
+          <button class="btn" onclick="closeModal()">cancel</button>
+          <button class="btn btn-primary" onclick="saveEvent()">save</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ========== PASSWORD GATE ==========
+      const PASS = "sharan123";
+      const gateEl = document.getElementById("gate");
+      const appEl = document.getElementById("app");
+      const pwdInput = document.getElementById("pwd");
+      const errEl = document.getElementById("err");
+
+      if (sessionStorage.getItem("events_auth") === "1") {
+        gateEl.style.display = "none";
+        appEl.style.display = "block";
+      }
+      pwdInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          if (pwdInput.value === PASS) {
+            sessionStorage.setItem("events_auth", "1");
+            gateEl.style.display = "none";
+            appEl.style.display = "block";
+            render();
+          } else {
+            errEl.style.display = "block";
+            pwdInput.value = "";
+            pwdInput.focus();
+          }
+        }
+      });
+
+      // ========== DATA ==========
+      const STORAGE_KEY = "sharan_big_events";
+      function loadEvents() {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+        catch { return []; }
+      }
+      function saveAllEvents(events) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
+      }
+
+      // ========== COLORS ==========
+      const COLORS = [
+        { name: "green",  cls: "c-green",  bg: "#22c55e" },
+        { name: "orange", cls: "c-orange", bg: "#f97316" },
+        { name: "purple", cls: "c-purple", bg: "#a855f7" },
+        { name: "blue",   cls: "c-blue",   bg: "#3b82f6" },
+        { name: "pink",   cls: "c-pink",   bg: "#ec4899" },
+        { name: "yellow", cls: "c-yellow", bg: "#eab308" },
+        { name: "red",    cls: "c-red",    bg: "#ef4444" },
+        { name: "teal",   cls: "c-teal",   bg: "#14b8a6" },
+        { name: "gray",   cls: "c-gray",   bg: "#6b7280" },
+      ];
+
+      // ========== STATE ==========
+      let viewYear = new Date().getFullYear();
+      let editingId = null;
+      let selectedColor = "c-green";
+
+      const DAYS_SHORT = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+      const MONTHS_SHORT = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+
+      function changeYear(d) { viewYear += d; render(); }
+      function goToday() {
+        viewYear = new Date().getFullYear();
+        render();
+        // scroll to today
+        const todayCell = document.querySelector(".cell.today");
+        if (todayCell) todayCell.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      // ========== HELPERS ==========
+      function dateStr(y, m, d) {
+        return `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+      }
+      function parseDate(s) {
+        const [y, m, d] = s.split("-").map(Number);
+        return new Date(y, m - 1, d);
+      }
+      function daysBetween(a, b) {
+        return Math.round((b - a) / 86400000);
+      }
+
+      // ========== RENDER ==========
+      function render() {
+        document.getElementById("year-label").textContent = viewYear;
+
+        const grid = document.getElementById("grid");
+        grid.innerHTML = "";
+
+        const jan1 = new Date(viewYear, 0, 1);
+        const dec31 = new Date(viewYear, 11, 31);
+        const startDow = jan1.getDay(); // 0=sun
+
+        // We need to fill from the sunday before jan 1 (or jan 1 if it's sunday)
+        const startDate = new Date(viewYear, 0, 1 - startDow);
+        // End on the saturday after dec 31
+        const endDow = dec31.getDay();
+        const endDate = new Date(viewYear, 11, 31 + (6 - endDow));
+
+        const totalDays = daysBetween(startDate, endDate) + 1;
+        const today = new Date();
+        const todayStr = dateStr(today.getFullYear(), today.getMonth(), today.getDate());
+
+        // Build cells
+        const cellData = []; // { date, el, row, col }
+        const dateToIndex = {};
+        let curDate = new Date(startDate);
+
+        for (let i = 0; i < totalDays; i++) {
+          const y = curDate.getFullYear();
+          const m = curDate.getMonth();
+          const d = curDate.getDate();
+          const dow = curDate.getDay();
+          const ds = dateStr(y, m, d);
+          const isThisYear = y === viewYear;
+
+          const cell = document.createElement("div");
+          cell.className = "cell";
+          if (dow === 0 || dow === 6) cell.classList.add("weekend");
+          if (ds === todayStr) cell.classList.add("today");
+          if (d === 1 && isThisYear) cell.classList.add("month-start");
+
+          let labelHtml = "";
+          if (d === 1 && isThisYear) {
+            labelHtml = `<span class="month-name">${MONTHS_SHORT[m]}</span>`;
+          }
+          labelHtml += `<span class="day-name">${DAYS_SHORT[dow]}</span> ${d}`;
+          cell.innerHTML = `<div class="label">${labelHtml}</div>`;
+
+          if (!isThisYear) {
+            cell.style.opacity = "0.3";
+          }
+
+          // click to create event on this day
+          cell.addEventListener("click", () => {
+            openModal(null, ds);
+          });
+
+          grid.appendChild(cell);
+
+          const row = Math.floor(i / 7);
+          const col = i % 7;
+          cellData.push({ date: ds, el: cell, row, col, index: i });
+          dateToIndex[ds] = i;
+
+          curDate.setDate(curDate.getDate() + 1);
+        }
+
+        // Now render events as absolute bars
+        // We need to measure cell positions after layout
+        requestAnimationFrame(() => {
+          renderEvents(cellData, dateToIndex, grid);
+        });
+      }
+
+      function renderEvents(cellData, dateToIndex, grid) {
+        // Remove old event layer
+        const oldLayer = grid.querySelector(".event-layer");
+        if (oldLayer) oldLayer.remove();
+
+        const events = loadEvents();
+        if (events.length === 0) return;
+
+        const layer = document.createElement("div");
+        layer.className = "event-layer";
+        grid.appendChild(layer);
+
+        const gridRect = grid.getBoundingClientRect();
+
+        // For each event, compute segments per row
+        // lane allocation per row
+        const rowLanes = {}; // row -> [ { startCol, endCol } ]  per lane
+
+        // Sort events by start date then by duration (longest first)
+        const sorted = events
+          .map(ev => {
+            const s = ev.startDate || ev.date;
+            const e = ev.endDate || ev.startDate || ev.date;
+            return { ...ev, s, e, duration: daysBetween(parseDate(s), parseDate(e)) + 1 };
+          })
+          .sort((a, b) => a.s.localeCompare(b.s) || b.duration - a.duration);
+
+        for (const ev of sorted) {
+          const startIdx = dateToIndex[ev.s];
+          const endIdx = dateToIndex[ev.e];
+          if (startIdx === undefined && endIdx === undefined) continue;
+
+          const si = Math.max(startIdx ?? 0, 0);
+          const ei = Math.min(endIdx ?? cellData.length - 1, cellData.length - 1);
+
+          // Split into row segments
+          let cur = si;
+          while (cur <= ei) {
+            const row = cellData[cur].row;
+            const rowEnd = (row + 1) * 7 - 1; // last index in this row
+            const segEnd = Math.min(ei, rowEnd);
+
+            const startCell = cellData[cur].el;
+            const endCell = cellData[segEnd].el;
+
+            // Find a lane in this row
+            if (!rowLanes[row]) rowLanes[row] = [];
+            const startCol = cellData[cur].col;
+            const endCol = cellData[segEnd].col;
+            let lane = 0;
+            while (true) {
+              if (!rowLanes[row][lane]) { rowLanes[row][lane] = []; break; }
+              const conflict = rowLanes[row][lane].some(
+                seg => !(endCol < seg.startCol || startCol > seg.endCol)
+              );
+              if (!conflict) break;
+              lane++;
+            }
+            if (!rowLanes[row][lane]) rowLanes[row][lane] = [];
+            rowLanes[row][lane].push({ startCol, endCol });
+
+            // Position the bar
+            const sRect = startCell.getBoundingClientRect();
+            const eRect = endCell.getBoundingClientRect();
+            const bar = document.createElement("div");
+            bar.className = `ev-bar ${ev.color || "c-green"}`;
+            bar.textContent = ev.title;
+            bar.title = `${ev.title} (${ev.s}${ev.e !== ev.s ? " → " + ev.e : ""})`;
+
+            const laneOffset = 20 + lane * 18; // 20px for label, 18px per lane
+            bar.style.top = (sRect.top - gridRect.top + laneOffset) + "px";
+            bar.style.left = (sRect.left - gridRect.left + 1) + "px";
+            bar.style.width = (eRect.right - sRect.left - 2) + "px";
+
+            bar.addEventListener("click", (e) => {
+              e.stopPropagation();
+              openModal(ev.id);
+            });
+
+            layer.appendChild(bar);
+
+            cur = segEnd + 1;
+          }
+        }
+      }
+
+      // ========== MODAL ==========
+      function openModal(eventId, defaultDate) {
+        editingId = eventId || null;
+        const overlay = document.getElementById("modal-overlay");
+        const titleInput = document.getElementById("ev-title");
+        const startInput = document.getElementById("ev-start");
+        const endInput = document.getElementById("ev-end");
+        const delBtn = document.getElementById("del-btn");
+        const modalTitle = document.getElementById("modal-title");
+
+        initColorPicker();
+
+        if (editingId) {
+          const events = loadEvents();
+          const ev = events.find(e => e.id === editingId);
+          if (!ev) return;
+          modalTitle.textContent = "edit event";
+          titleInput.value = ev.title;
+          startInput.value = ev.startDate || ev.date || "";
+          endInput.value = ev.endDate || ev.startDate || ev.date || "";
+          selectedColor = ev.color || "c-green";
+          delBtn.style.display = "block";
+        } else {
+          modalTitle.textContent = "create event";
+          titleInput.value = "";
+          startInput.value = defaultDate || "";
+          endInput.value = defaultDate || "";
+          selectedColor = "c-green";
+          delBtn.style.display = "none";
+        }
+
+        updateColorPicker();
+        overlay.classList.add("open");
+        titleInput.focus();
+      }
+
+      function closeModal(e) {
+        if (e && e.target !== e.currentTarget) return;
+        document.getElementById("modal-overlay").classList.remove("open");
+        editingId = null;
+      }
+
+      function initColorPicker() {
+        const picker = document.getElementById("color-picker");
+        if (picker.children.length > 0) return;
+        COLORS.forEach(c => {
+          const swatch = document.createElement("div");
+          swatch.className = "swatch";
+          swatch.style.background = c.bg;
+          swatch.dataset.cls = c.cls;
+          swatch.addEventListener("click", () => {
+            selectedColor = c.cls;
+            updateColorPicker();
+          });
+          picker.appendChild(swatch);
+        });
+      }
+
+      function updateColorPicker() {
+        document.querySelectorAll("#color-picker .swatch").forEach(s => {
+          s.classList.toggle("active", s.dataset.cls === selectedColor);
+        });
+      }
+
+      function saveEvent() {
+        const title = document.getElementById("ev-title").value.trim();
+        const startDate = document.getElementById("ev-start").value;
+        const endDate = document.getElementById("ev-end").value || startDate;
+        if (!title || !startDate) return;
+
+        const events = loadEvents();
+        if (editingId) {
+          const idx = events.findIndex(e => e.id === editingId);
+          if (idx !== -1) {
+            events[idx] = { ...events[idx], title, startDate, endDate, color: selectedColor };
+          }
+        } else {
+          events.push({
+            id: Date.now(),
+            title,
+            startDate,
+            endDate: endDate < startDate ? startDate : endDate,
+            color: selectedColor,
+          });
+        }
+        saveAllEvents(events);
+        closeModal();
+        render();
+      }
+
+      function deleteEvent() {
+        if (!editingId) return;
+        let events = loadEvents();
+        events = events.filter(e => e.id !== editingId);
+        saveAllEvents(events);
+        closeModal();
+        render();
+      }
+
+      // esc to close modal
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      // re-render on resize (event bars need repositioning)
+      let resizeTimer;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(render, 150);
+      });
+
+      // initial render
+      if (sessionStorage.getItem("events_auth") === "1") {
+        render();
+        setTimeout(() => {
+          const todayCell = document.querySelector(".cell.today");
+          if (todayCell) todayCell.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 100);
+      }
+    </script>
+  </body>
+</html>
