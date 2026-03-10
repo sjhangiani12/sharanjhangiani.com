@@ -70,6 +70,22 @@
       }
       .btn-primary:hover { background: #333; border-color: #333; }
 
+      /* save & deploy button */
+      .btn-save {
+        background: #22c55e; color: #fff; border-color: #22c55e;
+      }
+      .btn-save:hover { background: #16a34a; border-color: #16a34a; }
+      .btn-save.saving { opacity: 0.6; pointer-events: none; }
+      .btn-save.dirty { animation: pulse 1.5s infinite; }
+      @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.7; } }
+
+      /* settings link */
+      .btn-settings {
+        background: none; border: none; font-family: inherit; font-size: 13px;
+        cursor: pointer; color: var(--muted); padding: 7px 4px; text-transform: lowercase;
+      }
+      .btn-settings:hover { color: var(--fg); }
+
       /* --- year grid --- */
       .year-grid-wrap {
         padding: 0; overflow-x: auto;
@@ -80,6 +96,7 @@
         gap: 1px;
         background: var(--border);
         position: relative;
+        user-select: none;
       }
       .cell {
         background: var(--bg);
@@ -100,6 +117,13 @@
       }
       .cell .label .day-name {
         font-weight: 400;
+      }
+
+      /* drag-to-create highlight */
+      .cell.drag-highlight {
+        background: rgba(59, 130, 246, 0.12) !important;
+        outline: 2px solid rgba(59, 130, 246, 0.4);
+        outline-offset: -2px;
       }
 
       /* event bars - positioned absolutely over the grid */
@@ -198,8 +222,10 @@
           </div>
         </div>
         <div class="right">
+          <button class="btn btn-save" id="save-btn" style="display:none" onclick="saveAndDeploy()">save & deploy</button>
           <button class="btn" onclick="goToday()">today</button>
           <button class="btn btn-primary" onclick="openModal()">+ create event</button>
+          <button class="btn-settings" id="settings-btn" onclick="manageSettings()">⚙</button>
         </div>
       </div>
 
@@ -252,7 +278,7 @@
             sessionStorage.setItem("events_auth", "1");
             gateEl.style.display = "none";
             appEl.style.display = "block";
-            render();
+            initApp();
           } else {
             errEl.style.display = "block";
             pwdInput.value = "";
@@ -263,12 +289,163 @@
 
       // ========== DATA ==========
       const STORAGE_KEY = "sharan_big_events";
-      function loadEvents() {
-        try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
-        catch { return []; }
+      const GITHUB_OWNER = "sjhangiani12";
+      const GITHUB_REPO = "sharanjhangiani.com";
+      const DATA_PATH = "events/data.json";
+
+      let currentEvents = [];
+      let isDirty = false;
+
+      async function fetchRemoteEvents() {
+        const resp = await fetch("data.json?t=" + Date.now());
+        if (!resp.ok) throw new Error("fetch failed: " + resp.status);
+        return await resp.json();
       }
+
+      function loadEvents() {
+        return currentEvents;
+      }
+
       function saveAllEvents(events) {
+        currentEvents = events;
         localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
+        isDirty = true;
+        updateSaveButton();
+      }
+
+      async function initApp() {
+        try {
+          currentEvents = await fetchRemoteEvents();
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(currentEvents));
+        } catch (e) {
+          try { currentEvents = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+          catch { currentEvents = []; }
+        }
+        isDirty = false;
+        updateSaveButton();
+        render();
+        setTimeout(() => {
+          const todayCell = document.querySelector(".cell.today");
+          if (todayCell) todayCell.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 100);
+      }
+
+      // ========== GITHUB API ==========
+      function getGitHubPat() {
+        let pat = localStorage.getItem("github_pat");
+        if (!pat) {
+          pat = prompt("enter github personal access token (needs repo scope):");
+          if (pat) localStorage.setItem("github_pat", pat.trim());
+        }
+        return pat ? pat.trim() : null;
+      }
+
+      function updateSaveButton() {
+        const btn = document.getElementById("save-btn");
+        if (isDirty) {
+          btn.style.display = "";
+          btn.classList.add("dirty");
+        } else {
+          btn.classList.remove("dirty");
+          btn.style.display = "none";
+        }
+      }
+
+      async function fetchCurrentSha(pat) {
+        const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DATA_PATH}`;
+        const resp = await fetch(url, {
+          headers: {
+            "Authorization": "token " + pat,
+            "Accept": "application/vnd.github.v3+json",
+          },
+        });
+        if (resp.status === 404) return null;
+        if (!resp.ok) throw new Error("GitHub API error: " + resp.status);
+        const data = await resp.json();
+        return data.sha;
+      }
+
+      async function saveAndDeploy() {
+        const pat = getGitHubPat();
+        if (!pat) return;
+
+        const btn = document.getElementById("save-btn");
+        btn.textContent = "saving...";
+        btn.classList.add("saving");
+        btn.classList.remove("dirty");
+
+        try {
+          const sha = await fetchCurrentSha(pat);
+          const jsonStr = JSON.stringify(currentEvents, null, 2) + "\n";
+          const content = btoa(unescape(encodeURIComponent(jsonStr)));
+
+          const body = { message: "update events data", content };
+          if (sha) body.sha = sha;
+
+          const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DATA_PATH}`;
+          const resp = await fetch(url, {
+            method: "PUT",
+            headers: {
+              "Authorization": "token " + pat,
+              "Accept": "application/vnd.github.v3+json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(body),
+          });
+
+          if (resp.status === 401 || resp.status === 403) {
+            localStorage.removeItem("github_pat");
+            throw new Error("bad token - cleared. try again.");
+          }
+
+          if (resp.status === 409) {
+            // SHA conflict - retry once
+            const newSha = await fetchCurrentSha(pat);
+            body.sha = newSha;
+            const retry = await fetch(url, {
+              method: "PUT",
+              headers: {
+                "Authorization": "token " + pat,
+                "Accept": "application/vnd.github.v3+json",
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(body),
+            });
+            if (!retry.ok) throw new Error("retry failed: " + retry.status);
+          } else if (!resp.ok) {
+            throw new Error("GitHub API error: " + resp.status);
+          }
+
+          isDirty = false;
+          btn.textContent = "deployed";
+          btn.classList.remove("saving");
+          setTimeout(() => {
+            btn.textContent = "save & deploy";
+            updateSaveButton();
+          }, 2000);
+        } catch (err) {
+          alert("deploy failed: " + err.message);
+          btn.textContent = "save & deploy";
+          btn.classList.remove("saving");
+          btn.classList.add("dirty");
+        }
+      }
+
+      function manageSettings() {
+        const hasPat = !!localStorage.getItem("github_pat");
+        const msg = hasPat
+          ? "github pat is stored.\n\n[1] clear pat\n[2] cancel"
+          : "no github pat stored.\n\n[1] enter pat\n[2] cancel";
+        const choice = prompt(msg);
+        if (choice === "1") {
+          if (hasPat) {
+            localStorage.removeItem("github_pat");
+            alert("pat cleared.");
+          } else {
+            const pat = prompt("enter github personal access token:");
+            if (pat) localStorage.setItem("github_pat", pat.trim());
+          }
+        }
       }
 
       // ========== COLORS ==========
@@ -288,6 +465,8 @@
       let viewYear = new Date().getFullYear();
       let editingId = null;
       let selectedColor = "c-green";
+      let dragState = null;
+      let cellElements = []; // { el, date, index }
 
       const DAYS_SHORT = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
       const MONTHS_SHORT = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
@@ -296,7 +475,6 @@
       function goToday() {
         viewYear = new Date().getFullYear();
         render();
-        // scroll to today
         const todayCell = document.querySelector(".cell.today");
         if (todayCell) todayCell.scrollIntoView({ behavior: "smooth", block: "center" });
       }
@@ -313,20 +491,68 @@
         return Math.round((b - a) / 86400000);
       }
 
+      // ========== DRAG-TO-CREATE ==========
+      function getCellIndexFromEvent(e) {
+        const cell = e.target.closest(".cell");
+        if (!cell) return -1;
+        return cellElements.findIndex(c => c.el === cell);
+      }
+
+      function clearDragHighlight() {
+        document.querySelectorAll(".cell.drag-highlight").forEach(c => c.classList.remove("drag-highlight"));
+      }
+
+      function onGridMouseDown(e) {
+        if (e.target.closest(".ev-bar")) return;
+        if (e.button !== 0) return;
+        const idx = getCellIndexFromEvent(e);
+        if (idx < 0) return;
+        dragState = { startIndex: idx, startDate: cellElements[idx].date };
+        cellElements[idx].el.classList.add("drag-highlight");
+        e.preventDefault();
+      }
+
+      function onGridMouseMove(e) {
+        if (!dragState) return;
+        const idx = getCellIndexFromEvent(e);
+        if (idx < 0) return;
+        clearDragHighlight();
+        const lo = Math.min(dragState.startIndex, idx);
+        const hi = Math.max(dragState.startIndex, idx);
+        for (let i = lo; i <= hi; i++) {
+          cellElements[i].el.classList.add("drag-highlight");
+        }
+      }
+
+      function onGridMouseUp(e) {
+        if (!dragState) return;
+        clearDragHighlight();
+        const idx = getCellIndexFromEvent(e);
+        if (idx < 0) {
+          dragState = null;
+          return;
+        }
+        const lo = Math.min(dragState.startIndex, idx);
+        const hi = Math.max(dragState.startIndex, idx);
+        const startDate = cellElements[lo].date;
+        const endDate = cellElements[hi].date;
+        dragState = null;
+        openModal(null, startDate, endDate);
+      }
+
       // ========== RENDER ==========
       function render() {
         document.getElementById("year-label").textContent = viewYear;
 
         const grid = document.getElementById("grid");
         grid.innerHTML = "";
+        cellElements = [];
 
         const jan1 = new Date(viewYear, 0, 1);
         const dec31 = new Date(viewYear, 11, 31);
-        const startDow = jan1.getDay(); // 0=sun
+        const startDow = jan1.getDay();
 
-        // We need to fill from the sunday before jan 1 (or jan 1 if it's sunday)
         const startDate = new Date(viewYear, 0, 1 - startDow);
-        // End on the saturday after dec 31
         const endDow = dec31.getDay();
         const endDate = new Date(viewYear, 11, 31 + (6 - endDow));
 
@@ -334,8 +560,7 @@
         const today = new Date();
         const todayStr = dateStr(today.getFullYear(), today.getMonth(), today.getDate());
 
-        // Build cells
-        const cellData = []; // { date, el, row, col }
+        const cellData = [];
         const dateToIndex = {};
         let curDate = new Date(startDate);
 
@@ -364,30 +589,29 @@
             cell.style.opacity = "0.3";
           }
 
-          // click to create event on this day
-          cell.addEventListener("click", () => {
-            openModal(null, ds);
-          });
-
           grid.appendChild(cell);
 
           const row = Math.floor(i / 7);
           const col = i % 7;
           cellData.push({ date: ds, el: cell, row, col, index: i });
+          cellElements.push({ el: cell, date: ds, index: i });
           dateToIndex[ds] = i;
 
           curDate.setDate(curDate.getDate() + 1);
         }
 
-        // Now render events as absolute bars
-        // We need to measure cell positions after layout
+        // Attach drag handlers via event delegation
+        grid.addEventListener("mousedown", onGridMouseDown);
+        grid.addEventListener("mousemove", onGridMouseMove);
+        grid.addEventListener("mouseup", onGridMouseUp);
+
+        // Render events after layout
         requestAnimationFrame(() => {
           renderEvents(cellData, dateToIndex, grid);
         });
       }
 
       function renderEvents(cellData, dateToIndex, grid) {
-        // Remove old event layer
         const oldLayer = grid.querySelector(".event-layer");
         if (oldLayer) oldLayer.remove();
 
@@ -400,11 +624,8 @@
 
         const gridRect = grid.getBoundingClientRect();
 
-        // For each event, compute segments per row
-        // lane allocation per row
-        const rowLanes = {}; // row -> [ { startCol, endCol } ]  per lane
+        const rowLanes = {};
 
-        // Sort events by start date then by duration (longest first)
         const sorted = events
           .map(ev => {
             const s = ev.startDate || ev.date;
@@ -421,17 +642,15 @@
           const si = Math.max(startIdx ?? 0, 0);
           const ei = Math.min(endIdx ?? cellData.length - 1, cellData.length - 1);
 
-          // Split into row segments
           let cur = si;
           while (cur <= ei) {
             const row = cellData[cur].row;
-            const rowEnd = (row + 1) * 7 - 1; // last index in this row
+            const rowEnd = (row + 1) * 7 - 1;
             const segEnd = Math.min(ei, rowEnd);
 
             const startCell = cellData[cur].el;
             const endCell = cellData[segEnd].el;
 
-            // Find a lane in this row
             if (!rowLanes[row]) rowLanes[row] = [];
             const startCol = cellData[cur].col;
             const endCol = cellData[segEnd].col;
@@ -447,7 +666,6 @@
             if (!rowLanes[row][lane]) rowLanes[row][lane] = [];
             rowLanes[row][lane].push({ startCol, endCol });
 
-            // Position the bar
             const sRect = startCell.getBoundingClientRect();
             const eRect = endCell.getBoundingClientRect();
             const bar = document.createElement("div");
@@ -455,7 +673,7 @@
             bar.textContent = ev.title;
             bar.title = `${ev.title} (${ev.s}${ev.e !== ev.s ? " → " + ev.e : ""})`;
 
-            const laneOffset = 20 + lane * 18; // 20px for label, 18px per lane
+            const laneOffset = 20 + lane * 18;
             bar.style.top = (sRect.top - gridRect.top + laneOffset) + "px";
             bar.style.left = (sRect.left - gridRect.left + 1) + "px";
             bar.style.width = (eRect.right - sRect.left - 2) + "px";
@@ -473,7 +691,7 @@
       }
 
       // ========== MODAL ==========
-      function openModal(eventId, defaultDate) {
+      function openModal(eventId, defaultDate, defaultEndDate) {
         editingId = eventId || null;
         const overlay = document.getElementById("modal-overlay");
         const titleInput = document.getElementById("ev-title");
@@ -498,7 +716,7 @@
           modalTitle.textContent = "create event";
           titleInput.value = "";
           startInput.value = defaultDate || "";
-          endInput.value = defaultDate || "";
+          endInput.value = defaultEndDate || defaultDate || "";
           selectedColor = "c-green";
           delBtn.style.display = "none";
         }
@@ -576,6 +794,19 @@
         if (e.key === "Escape") closeModal();
       });
 
+      // cancel drag if mouse leaves the grid
+      document.addEventListener("mouseleave", () => {
+        if (dragState) {
+          clearDragHighlight();
+          dragState = null;
+        }
+      });
+
+      // warn before leaving with unsaved changes
+      window.addEventListener("beforeunload", (e) => {
+        if (isDirty) { e.preventDefault(); e.returnValue = ""; }
+      });
+
       // re-render on resize (event bars need repositioning)
       let resizeTimer;
       window.addEventListener("resize", () => {
@@ -583,13 +814,9 @@
         resizeTimer = setTimeout(render, 150);
       });
 
-      // initial render
+      // initial load
       if (sessionStorage.getItem("events_auth") === "1") {
-        render();
-        setTimeout(() => {
-          const todayCell = document.querySelector(".cell.today");
-          if (todayCell) todayCell.scrollIntoView({ behavior: "smooth", block: "center" });
-        }, 100);
+        initApp();
       }
     </script>
   </body>
