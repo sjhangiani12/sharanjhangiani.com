@@ -30,6 +30,8 @@ export type Project = {
   /** The name of the GitHub repository, if the project has one. */
   repo?: string;
   site?: string;
+  /** Posts on X about the project. */
+  posts: { url: string; date?: string; text: string }[];
   order: number;
   /** The path of the Markdown file in the repository. */
   file: string;
@@ -56,6 +58,7 @@ function read(file: string): Project {
     stack: data.stack ?? [],
     repo: data.repo,
     site: data.site,
+    posts: (data.posts ?? []).map((post: { url: string; date?: unknown; text: string }) => ({ ...post, date: day(post.date) })),
     order: data.order ?? 999,
     file: `content/projects/${file}`,
     html: marked.parse(content, { async: false }),

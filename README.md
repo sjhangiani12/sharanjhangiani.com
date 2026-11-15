@@ -13,7 +13,7 @@ code: HUM            # the short name on the go / no-go row
 id: M-08
 kind: side           # primary, side, or past
 status: nominal      # active, nominal, complete, or archived
-order: 8             # the position on the mission board
+order: 8             # the position in the list
 summary: One line for the board.
 launched: 2026-02-08
 last_contact: 2026-02-08

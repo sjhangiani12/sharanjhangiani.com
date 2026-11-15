@@ -11,6 +11,15 @@ last_contact: 2026-11-06
 repo: s1directory.com
 site: https://www.s1directory.com
 stack: [HTML, CSS, JavaScript, SEC EDGAR]
+posts:
+  - url: https://x.com/sharanjhangiani/status/2115006198655455291
+    date: 2026-10-27
+    text: |
+      in honor of Anthropic's S1, thought i'd revive and redesign a 6yr(!) old project of mine: The Opening Bell
+
+      full directory of every "tech" related S1
+
+      check it out below :)
 ---
 
 ## What it is

@@ -30,6 +30,18 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
       {/* The Markdown comes from this repository, so the HTML is safe to insert. */}
       <article className="prose" dangerouslySetInnerHTML={{ __html: project.html }} />
 
+      {project.posts.length > 0 && (
+        <section className="block">
+          <div className="label">On X</div>
+          {project.posts.map((post) => (
+            <a key={post.url} className="post" href={post.url}>
+              <p>{post.text}</p>
+              <span>{post.date} · read the post ↗</span>
+            </a>
+          ))}
+        </section>
+      )}
+
       <section className="block">
         <div className="label">Links</div>
         <div className="links">
