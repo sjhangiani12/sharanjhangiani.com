@@ -9,14 +9,14 @@ export const SITE_REPO = `https://github.com/${GITHUB_USER}/sharanjhangiani.com`
 /** Sol 0: the day of the first public repository. */
 export const SOL_ZERO = "2017-08-30";
 
-const DIRECTORY = path.join(process.cwd(), "content", "missions");
+const DIRECTORY = path.join(process.cwd(), "content", "projects");
 
 export type Status = "active" | "nominal" | "complete" | "archived";
 
-export type Mission = {
+export type Project = {
   slug: string;
   title: string;
-  /** The short name on the go / no-go row and on the patch. */
+  /** The short name for the project. */
   code: string;
   id: string;
   kind: "primary" | "side" | "past";
@@ -27,7 +27,7 @@ export type Mission = {
   lastContact?: string;
   role?: string;
   stack: string[];
-  /** The name of the GitHub repository, if the mission has one. */
+  /** The name of the GitHub repository, if the project has one. */
   repo?: string;
   site?: string;
   order: number;
@@ -39,7 +39,7 @@ export type Mission = {
 const day = (value: unknown) =>
   value instanceof Date ? value.toISOString().slice(0, 10) : value ? String(value) : undefined;
 
-function read(file: string): Mission {
+function read(file: string): Project {
   const { data, content } = matter(fs.readFileSync(path.join(DIRECTORY, file), "utf8"));
   return {
     slug: file.replace(/\.md$/, ""),
@@ -57,7 +57,7 @@ function read(file: string): Mission {
     repo: data.repo,
     site: data.site,
     order: data.order ?? 999,
-    file: `content/missions/${file}`,
+    file: `content/projects/${file}`,
     html: marked.parse(content, { async: false }),
   };
 }
@@ -78,8 +78,8 @@ async function lastPushes(): Promise<Record<string, string>> {
   }
 }
 
-/** All missions, in board order. Each mission is one Markdown file in content/missions. */
-export async function getMissions(): Promise<Mission[]> {
+/** All projects, in list order. Each project is one Markdown file in content/projects. */
+export async function getProjects(): Promise<Project[]> {
   "use cache";
   cacheLife("hours");
   const pushes = await lastPushes();
@@ -87,13 +87,13 @@ export async function getMissions(): Promise<Mission[]> {
     .readdirSync(DIRECTORY)
     .filter((file) => file.endsWith(".md"))
     .map(read)
-    .map((mission) => {
-      const live = mission.repo ? pushes[mission.repo] : undefined;
-      return live && live > (mission.lastContact ?? "") ? { ...mission, lastContact: live } : mission;
+    .map((project) => {
+      const live = project.repo ? pushes[project.repo] : undefined;
+      return live && live > (project.lastContact ?? "") ? { ...project, lastContact: live } : project;
     })
     .sort((a, b) => a.order - b.order);
 }
 
-export async function getMission(slug: string) {
-  return (await getMissions()).find((mission) => mission.slug === slug);
+export async function getProject(slug: string) {
+  return (await getProjects()).find((project) => project.slug === slug);
 }

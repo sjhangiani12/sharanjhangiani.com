@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { Clocks } from "@/components/Clocks";
-import { getMissions, SOL_ZERO } from "@/lib/missions";
+import { getProjects, SOL_ZERO } from "@/lib/projects";
 
 export default async function Home() {
-  const missions = (await getMissions()).filter((mission) => mission.kind !== "past");
+  const projects = (await getProjects()).filter((project) => project.kind !== "past");
 
   return (
     <main className="page">
       <div className="status-line">
-        <span>sj</span>
         <Clocks solZero={SOL_ZERO} />
       </div>
 
@@ -17,27 +16,27 @@ export default async function Home() {
 
       <section className="block inline">
         <p>
-          Now: building <Link href="/missions/cura">Cura</Link>, portfolio management on autopilot for early-stage VCs.
+          Now: building <Link href="/projects/cura">Cura</Link>, portfolio management on autopilot for early-stage VCs.
         </p>
         <p>
-          Before: GTM at <Link href="/missions/yoodli">Yoodli</Link>, ML at{" "}
-          <Link href="/missions/productiv">Productiv</Link>, and started{" "}
-          <Link href="/missions/dubhacks-next">DubHacks Next</Link>.
+          Before: GTM at <Link href="/projects/yoodli">Yoodli</Link>, ML at{" "}
+          <Link href="/projects/productiv">Productiv</Link>, and started{" "}
+          <Link href="/projects/dubhacks-next">DubHacks Next</Link>.
         </p>
       </section>
 
       <section className="block">
-        <div className="label">Missions</div>
+        <div className="label">Projects</div>
         <ul className="rows">
-          {missions.map((mission) => (
-            <li key={mission.slug}>
-              <Link href={`/missions/${mission.slug}`}>
-                <span className={`mark ${mission.status === "active" ? "mark-active" : ""}`} />
+          {projects.map((project) => (
+            <li key={project.slug}>
+              <Link href={`/projects/${project.slug}`}>
+                <span className={`mark ${project.status === "active" ? "mark-active" : ""}`} />
                 <span className="name">
-                  <b>{mission.title}</b>
-                  <span className="what">{mission.summary}</span>
+                  <b>{project.title}</b>
+                  <span className="what">{project.summary}</span>
                 </span>
-                <span className="when">{(mission.lastContact ?? mission.launched).slice(0, 4) || "now"}</span>
+                <span className="when">{(project.lastContact ?? project.launched).slice(0, 4) || "now"}</span>
               </Link>
             </li>
           ))}
@@ -49,9 +48,8 @@ export default async function Home() {
         <div className="links">
           <a href="mailto:jhangiani.sharan@gmail.com">Email</a>
           <a href="https://github.com/sjhangiani12">GitHub</a>
-          <a href="https://twitter.com/sjhangiani12">Twitter</a>
+          <a href="https://x.com/sharanjhangiani">X</a>
           <a href="https://linkedin.com/in/sharanjhangiani">LinkedIn</a>
-          <a href="/events">Events</a>
         </div>
       </section>
     </main>

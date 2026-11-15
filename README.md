@@ -1,10 +1,10 @@
 # sharanjhangiani.com
 
-My personal site, in the style of a mission control room. Each project is a "mission" with its own page.
+My personal site, plain and quiet. Each project has its own page.
 
-## Add or change a mission
+## Add or change a project
 
-Each mission is one Markdown file in `content/missions/`. The file name is the URL: `content/missions/hum.md` becomes `/missions/hum`.
+Each project is one Markdown file in `content/projects/`. The file name is the URL: `content/projects/hum.md` becomes `/projects/hum`.
 
 ```md
 ---
@@ -22,12 +22,12 @@ site: https://...    # optional
 stack: [Swift, SwiftUI]
 ---
 
-## The mission
+## What it is
 
 Write the log here, in Markdown.
 ```
 
-If a mission has a `repo`, the site reads the date of the last push from GitHub one time each hour. `last_contact` is the fallback.
+If a project has a `repo`, the site reads the date of the last push from GitHub one time each hour. `last_contact` is the fallback.
 
 ## Run it
 
@@ -44,13 +44,13 @@ Then open http://localhost:3000.
 
 | File | Purpose |
 | --- | --- |
-| `content/missions/*.md` | The missions. |
-| `lib/missions.ts` | Reads the Markdown files and the GitHub dates. |
-| `app/page.tsx` | Mission control: the home page. |
-| `app/missions/[slug]/page.tsx` | The page of one mission. |
-| `app/layout.tsx` | The top bar, the clocks, and the footer. |
+| `content/projects/*.md` | The projects. Images are in `public/media/`. |
+| `lib/projects.ts` | Reads the Markdown files and the GitHub dates. |
+| `app/page.tsx` | The home page. |
+| `app/projects/[slug]/page.tsx` | The page of one project. |
+| `app/layout.tsx` | The font and the page shell. |
 | `app/globals.css` | All the styles. |
-| `components/Clocks.tsx` | The UTC, NYC, and sol clocks. |
+| `components/Clocks.tsx` | The sol count and the New York time. |
 | `public/events/index.html` | The events calendar, one plain HTML file. |
 
 The site is a Next.js app. All the pages are static today, so it can deploy to Vercel with no settings.
