@@ -16,6 +16,8 @@ stack: [JavaScript, Cloudflare Workers, TRMNL, GBFS]
 
 A plugin for the TRMNL e-ink display. It shows the live state of one Citi Bike station.
 
+![The display: 6 classic bikes, 5 electric bikes, 11 total bikes, and 54 free docks at 6 Ave & W 34 St](/media/citi-bike-trmnl/display.png)
+
 ## Why
 
 Before I leave home, I want to know if the dock has a bike. I did not want to open an app for that. The TRMNL sits on a shelf and is always on.

@@ -16,6 +16,10 @@ stack: [Swift 6, SwiftUI, ShazamKit, macOS]
 
 A macOS menu bar app that names the song that plays near me. It is Shazam, one click away, with a record of each song.
 
+<div class="shots shots-one"><img src="/media/hum/menu.png" alt="The Hum menu: the song it found, the Copy and Spotify buttons, and the recent songs"></div>
+
+*The menu, drawn from the app code with sample songs.*
+
 ## Why
 
 I hear a song in a cafe or in a video, and I want its name before it ends. On a Mac, that took too many steps. I also wanted a list of each song I found.

@@ -16,6 +16,10 @@ stack: [Next.js, React, Google Imagen, Vercel KV]
 
 A web app that makes a storyboard for a product feature. An AI model draws the scenes.
 
+![A storyboard with three phases. Each phase has a customer frame, a product frame, and a service frame.](/media/storyboard/board.jpg)
+
+*The app with a sample storyboard. The illustration frames are empty, because I ran it with no image key.*
+
 ## Why
 
 A good feature story shows three things at the same time: what the customer feels, what the product shows, and what the service does behind it. Most specs show only the screens.

@@ -16,6 +16,8 @@ stack: [TypeScript, Slack, Vercel AI SDK, npm]
 
 A small TypeScript library that sends each AI conversation in a product to a Slack thread. The team sees each message, tool call, and response.
 
+![The Breadcrumb site, with a demo of one trace in a Slack channel](/media/breadcrumb/site.png)
+
 ## Why
 
 When an AI feature is new, the fastest way to learn is to read real conversations. Most tracing tools put them in a dashboard that nobody opens.

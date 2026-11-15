@@ -16,6 +16,10 @@ stack: [SwiftUI, Node.js, tmux, Tailscale, git worktrees]
 
 A way to run Claude Code on my Mac and control it from my iPhone. Each task gets its own workspace.
 
+<div class="shots shots-one"><img src="/media/eve/dashboard.png" alt="The Eve dashboard on an iPhone: two repositories, with workspaces that are active, waiting, or idle"></div>
+
+*The dashboard, in the iOS simulator with sample workspaces.*
+
 ## Why
 
 Claude Code can work for a long time with no help. I wanted to start work, leave my desk, and steer it from my phone.

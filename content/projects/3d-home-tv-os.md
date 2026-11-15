@@ -18,6 +18,10 @@ The home screen of my TV is a live model of my street and my apartment. It is my
 
 The original project turns a scan of a home into a live 3D model, and makes that model the home screen of a Google TV.
 
+![The block: a pixel-art street at night, with the subway times, two Citi Bike docks, the lights, and a dock of apps](/media/3d-home-tv-os/block.jpg)
+
+*The block, with the generic street and mock data. My own street stays private.*
+
 ## Why
 
 A TV home screen is full of ads and "recommended for you" rows. I wanted mine to show things that are true about my home right now: the lights, the music, the next train.
@@ -28,6 +32,10 @@ A TV home screen is full of ads and "recommended for you" rows. I wanted mine to
 - **The subway.** The nearest station, with live train times from the MTA feed.
 - **Citi Bike.** Two docks, with live bike counts.
 - **My apartment in 3D.** The lamps in the model match the real Hue lamps. I turn a lamp on from the remote, and it turns on in the room and in the model.
+
+![A 3D apartment at night, with one lamp on and the TV on](/media/3d-home-tv-os/apartment.jpg)
+
+*The demo apartment that comes with the project.*
 - **Sonos.** A sign next to the house shows what plays, with the cover as pixel art. A music panel has play, pause, skip, and a volume bar for each room.
 - **A dock of apps.** The TV still opens the usual apps.
 
