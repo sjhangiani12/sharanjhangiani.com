@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Clocks } from "@/components/Clocks";
+import { getIdeas } from "@/lib/ideas";
 import { getProjects, SOL_ZERO } from "@/lib/projects";
 
 export default async function Home() {
   const projects = (await getProjects()).filter((project) => project.kind !== "past");
+  const ideas = (await getIdeas()).filter((idea) => idea.status !== "done" && idea.status !== "dropped");
 
   return (
     <main className="page">
@@ -41,6 +43,13 @@ export default async function Home() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="block inline">
+        <div className="label">Ideas</div>
+        <p>
+          <Link href="/ideas">{ideas.length} things that I want to build</Link> →
+        </p>
       </section>
 
       <section className="block">
