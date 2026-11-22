@@ -46,4 +46,8 @@ ideas:
     status: idea
     added: 2026-11-14
     note: "Design and print lamps to mount on the wall. Open: the design, the materials, and the electrical setup."
+  - title: Lights from anywhere
+    status: active
+    added: 2026-11-22
+    note: "Control the Hue lights from my iPhone when I am away from home, with a Lock Screen widget. The home bridge connects out to a Cloudflare relay, so no port opens at home. The relay and the app work in tests. Open: deploy the relay, update the home server, and install the app."
 ---
