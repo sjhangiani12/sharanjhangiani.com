@@ -3,25 +3,25 @@
 # status: idea, active, paused, done, or dropped.
 ideas:
   - title: Mission-control dashboards
-    status: idea
+    status: dropped
     added: 2026-11-14
     note: Live displays at home and at the office. They show business stats and my autonomous agents as they build things like perks.money. They can run on mounted monitors and on the devices below.
   - title: Perks software factory
-    status: paused
+    status: done
     added: 2026-11-14
-    note: A system on Hetzner that builds perks.money end to end. Devin and Inspect are the models for it. It is paused now.
+    note: A system on Hetzner that builds perks.money end to end, with a cron job, a stateless agent, and a ledger. It runs on its own and does not ask me for anything.
   - title: Custom speaker
     status: idea
     added: 2026-11-14
     note: Build a home speaker with a friend.
   - title: Bike power meter
-    status: idea
+    status: active
     added: 2026-11-14
-    note: Build a power meter for a bicycle. It connects to the Maker Space project.
+    note: "Build a power meter for a bicycle, with strain gauges on the left crank arm and my own iPhone app. It connects to the Maker Space project. Open: order the parts."
   - title: Kindle project
-    status: idea
+    status: done
     added: 2026-11-14
-    note: Customize the Kindle as a useful display and control device for the home. It is separate from the Fire TV Stick.
+    note: Customize the Kindle as a useful display and control device for the home. It is now Nightstand, a home screen and reader on my Kindle. It is separate from the Fire TV Stick.
   - title: Terminal display
     status: idea
     added: 2026-11-14
