@@ -7,7 +7,7 @@ ideas:
     added: 2026-11-14
     note: Live displays at home and at the office. They show business stats and my autonomous agents as they build things like perks.money. They can run on mounted monitors and on the devices below.
   - title: Perks software factory
-    status: done
+    status: active
     added: 2026-11-14
     note: A system on Hetzner that builds perks.money end to end, with a cron job, a stateless agent, and a ledger. It runs on its own and does not ask me for anything.
   - title: Custom speaker

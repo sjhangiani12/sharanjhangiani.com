@@ -3,7 +3,7 @@ title: Citi Bike MCP
 code: BIKE
 id: M-12
 kind: side
-status: nominal
+status: complete
 order: 12
 summary: An MCP server that finds the nearest Citi Bike stations, with live bike counts.
 launched: 2025-10-28

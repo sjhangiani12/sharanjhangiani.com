@@ -3,7 +3,7 @@ title: Citi Bike for TRMNL
 code: TRMNL
 id: M-11
 kind: side
-status: nominal
+status: complete
 order: 11
 summary: Live Citi Bike station availability on a TRMNL e-ink display.
 launched: 2026-01-26

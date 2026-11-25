@@ -3,7 +3,7 @@ title: Nightstand
 code: NIGHT
 id: M-02
 kind: side
-status: active
+status: complete
 order: 2
 summary: A calm home screen, reader, and book delivery for a jailbroken Kindle.
 launched: 2026-11-10

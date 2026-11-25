@@ -3,7 +3,7 @@ title: S1 Directory
 code: S-1
 id: M-05
 kind: side
-status: active
+status: complete
 order: 5
 summary: "The Opening Bell: a library of tech S-1 filings, bound as books."
 launched: 2020-05-01

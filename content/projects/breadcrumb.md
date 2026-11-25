@@ -3,7 +3,7 @@ title: Breadcrumb
 code: CRUMB
 id: M-07
 kind: side
-status: nominal
+status: complete
 order: 7
 summary: See every message, tool call, and response from an AI conversation in Slack.
 launched: 2026-01-26

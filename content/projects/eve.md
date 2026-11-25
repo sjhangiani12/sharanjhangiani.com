@@ -3,7 +3,7 @@ title: Eve
 code: EVE
 id: M-09
 kind: side
-status: archived
+status: complete
 order: 9
 summary: Run Claude Code workspaces on a Mac, and control them from an iPhone.
 launched: 2026-02-03

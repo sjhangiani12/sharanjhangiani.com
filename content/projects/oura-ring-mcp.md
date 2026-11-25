@@ -3,7 +3,7 @@ title: Oura Ring MCP
 code: OURA
 id: M-10
 kind: side
-status: nominal
+status: complete
 order: 10
 summary: An MCP server that gives an AI assistant my sleep, readiness, and activity data.
 launched: 2026-01-24

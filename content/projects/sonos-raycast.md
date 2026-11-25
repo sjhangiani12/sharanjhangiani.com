@@ -3,7 +3,7 @@ title: Sonos for Raycast
 code: SONOS
 id: M-03
 kind: side
-status: active
+status: complete
 order: 3
 summary: Change the volume and pick the rooms that play, from the keyboard.
 launched: 2026-11-14

@@ -3,7 +3,7 @@ title: 3D Home TV OS
 code: HOME
 id: M-04
 kind: side
-status: active
+status: complete
 order: 4
 summary: My home as the home screen of my TV, with live lights, subway, and Citi Bike.
 launched: 2026-10-25

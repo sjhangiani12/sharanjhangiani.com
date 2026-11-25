@@ -3,7 +3,7 @@ title: Hum
 code: HUM
 id: M-08
 kind: side
-status: nominal
+status: complete
 order: 8
 summary: A macOS menu bar app that names the song that plays near you.
 launched: 2026-02-08
